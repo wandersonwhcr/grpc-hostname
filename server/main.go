@@ -1,6 +1,7 @@
 package server
 
 import (
+	"context"
 	"log"
 	"net"
 	"os"
@@ -11,6 +12,14 @@ import (
 
 type server struct {
 	proto.UnimplementedHostnameServer
+}
+
+func (s *server) GetHostname(ctx context.Context, req *proto.GetHostnameRequest) (*proto.GetHostnameResponse, error) {
+	hostname, err := os.Hostname()
+
+	log.Printf("Server: %s, Client: %s", hostname, req.Hostname)
+
+	return &proto.GetHostnameResponse{ Hostname: hostname }, err
 }
 
 func Run() {
