@@ -5,3 +5,7 @@ services:
     volumes:
       - .:/usr/local/src
     working_dir: /usr/local/src
+    command:
+      - go
+      - run
+      - main.go
