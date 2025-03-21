@@ -10,11 +10,11 @@ import (
 
 func main() {
 	switch os.Getenv("HOSTNAME_CMD") {
-		case "server":
-			server.Run()
-		case "client":
-			client.Run();
-		default:
-			log.Fatalf("Failed to Command: server or client")
+	case "server":
+		server.Run()
+	case "client":
+		client.Run()
+	default:
+		log.Fatalf("Failed to Command: server or client")
 	}
 }

@@ -19,7 +19,7 @@ func (s *server) GetHostname(ctx context.Context, req *proto.GetHostnameRequest)
 
 	log.Printf("Server: %s, Client: %s", hostname, req.Hostname)
 
-	return &proto.GetHostnameResponse{ Hostname: hostname }, err
+	return &proto.GetHostnameResponse{Hostname: hostname}, err
 }
 
 func Run() {
