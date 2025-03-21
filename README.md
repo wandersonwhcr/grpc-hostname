@@ -34,3 +34,14 @@ docker compose up client --detach
 ```
 docker compose logs client server
 ```
+
+## Build and Push
+
+```
+docker build . \
+    --tag ghcr.io/wandersonwhcr/grpc-hostname:`git short`
+```
+
+```
+docker push ghcr.io/wandersonwhcr/grpc-hostname:`git short`
+```
