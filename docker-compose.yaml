@@ -9,3 +9,5 @@ services:
       - go
       - run
       - main.go
+    environment:
+      HOSTNAME_SERVER_ADDR: "0.0.0.0:50051"
