@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "./;proto";
+
+message GetHostnameRequest {
+  string hostname = 1;
+}
+
+message GetHostnameResponse {
+  string hostname = 1;
+}
+
+service Hostname {
+  rpc GetHostname(GetHostnameRequest) returns (GetHostnameResponse) {}
+}
