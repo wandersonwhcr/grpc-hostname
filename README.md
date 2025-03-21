@@ -45,3 +45,8 @@ docker build . \
 ```
 docker push ghcr.io/wandersonwhcr/grpc-hostname:`git short`
 ```
+
+## Environment Variables
+
+* `HOSTNAME_CMD`
+* `HOSTNAME_SERVER_ADDR`
