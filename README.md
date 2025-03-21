@@ -17,3 +17,8 @@ docker compose run --rm server \
     --go-grpc_opt=paths=source_relative \
     proto/hostname.proto
 ```
+
+```
+docker compose run --rm server \
+    go mod download
+```
