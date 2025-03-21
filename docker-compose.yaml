@@ -2,3 +2,6 @@ services:
   server:
     build:
       context: ./docker-compose
+    volumes:
+      - .:/usr/local/src
+    working_dir: /usr/local/src
