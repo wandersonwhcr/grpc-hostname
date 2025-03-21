@@ -1,5 +1,8 @@
 services:
-  server:
+
+# ------------------------------------------------------------------------------
+
+  server: &server
     build:
       context: ./docker-compose
     volumes:
@@ -13,6 +16,18 @@ services:
     environment:
       HOSTNAME_CMD: "server"
       HOSTNAME_SERVER_ADDR: "0.0.0.0:50051"
+
+# ------------------------------------------------------------------------------
+
+  client:
+    <<: *server
+    environment:
+      HOSTNAME_CMD: "client"
+      HOSTNAME_SERVER_ADDR: "server:50051"
+    profiles:
+      - donotstart
+
+# ------------------------------------------------------------------------------
 
 volumes:
   gopath:
