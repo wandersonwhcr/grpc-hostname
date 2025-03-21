@@ -4,6 +4,7 @@ services:
       context: ./docker-compose
     volumes:
       - .:/usr/local/src
+      - gopath:/go
     working_dir: /usr/local/src
     command:
       - go
@@ -11,3 +12,6 @@ services:
       - main.go
     environment:
       HOSTNAME_SERVER_ADDR: "0.0.0.0:50051"
+
+volumes:
+  gopath:
