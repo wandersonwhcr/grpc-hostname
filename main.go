@@ -5,8 +5,8 @@ import (
 	"net"
 	"os"
 
-	"google.golang.org/grpc"
 	"github.com/wandersonwhcr/grpc-hostname/proto"
+	"google.golang.org/grpc"
 )
 
 type server struct {
