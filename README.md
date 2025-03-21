@@ -22,3 +22,15 @@ docker compose run --rm server \
 docker compose run --rm server \
     go mod download
 ```
+
+```
+docker compose up --detach
+```
+
+```
+docker compose up client --detach
+```
+
+```
+docker compose logs client server
+```
