@@ -39,7 +39,8 @@ docker compose logs client server
 
 ```
 docker build . \
-    --tag ghcr.io/wandersonwhcr/grpc-hostname:`git short`
+    --tag ghcr.io/wandersonwhcr/grpc-hostname:`git short` \
+    --target release
 ```
 
 ```
