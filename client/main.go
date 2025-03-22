@@ -17,7 +17,11 @@ func Run() {
 		log.Fatalf("Failed to Get Hostname: %v", err)
 	}
 
-	conn, err := grpc.Dial(os.Getenv("HOSTNAME_SERVER_ADDR"), grpc.WithInsecure(), grpc.WithBlock())
+	conn, err := grpc.NewClient(
+		os.Getenv("HOSTNAME_SERVER_ADDR"),
+		grpc.WithInsecure(),
+		grpc.WithDefaultServiceConfig(`{"loadBalancingConfig":[{"round_robin":{}}]}`),
+	)
 
 	if err != nil {
 		log.Fatalf("Failed to Connect: %v", err)
